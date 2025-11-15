@@ -1,0 +1,48 @@
+name: Sync Fork with Upstream
+
+# This workflow automatically syncs your fork with the upstream coder/coder repository
+on:
+  schedule:
+    # Runs daily at 2 AM UTC (7:30 AM IST)
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  sync:
+    name: Sync with coder/coder
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout fork
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/coder/coder.git || true
+          git fetch upstream
+      
+      - name: Merge upstream changes
+        run: |
+          git checkout main
+          git merge upstream/main --no-edit || {
+            echo "Merge conflict detected. Manual intervention required."
+            exit 1
+          }
+      
+      - name: Push changes
+        run: |
+          git push origin main
+      
+      - name: Create sync summary
+        if: success()
+        run: |
+          echo "✅ Successfully synced fork with upstream coder/coder at $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "📊 Latest commit: $(git log -1 --oneline)" >> $GITHUB_STEP_SUMMARY
