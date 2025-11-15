@@ -1,3 +1,38 @@
+<!-- Custom Fork Banner -->
+<div align="center">
+
+## 🚀 Coder_0118 - Next Gen Ops Custom Fork
+
+[![Maintained by Next Gen Ops](https://img.shields.io/badge/Maintained%20by-Next%20Gen%20Ops-blue.svg)](https://github.com/tabrezahmed51)
+[![Synced with Upstream](https://img.shields.io/badge/Synced-Latest-brightgreen.svg)](https://github.com/coder/coder)
+[![License](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](LICENSE)
+
+### 🎯 Zero-Cost Cloud Development Environment
+
+> **Forked from [coder/coder](https://github.com/coder/coder)** - Enhanced for Next Gen Ops deployment strategies
+
+**Vision**: Building accessible, zero-cost development environments powered by AI and automation.
+
+#### ✨ Custom Enhancements (Coming Soon)
+- 🤖 AI-powered workspace automation
+- 🔄 Automated sync with upstream
+- 📊 Enhanced monitoring and analytics
+- 🔐 Advanced security configurations
+- 🚀 Optimized deployment workflows
+
+#### 📦 Why This Fork?
+This repository maintains a customized version of Coder, optimized for:
+- **Zero-budget deployments** aligned with CODE ZERO principles
+- **AI-first development** environments
+- **Community-driven** enhancements
+- **Enterprise-ready** features at no cost
+
+---
+
+</div>
+
+<!-- Original Coder README Below -->
+
 <!-- markdownlint-disable MD041 -->
 <div align="center">
   <a href="https://coder.com#gh-light-mode-only">
